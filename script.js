@@ -46,11 +46,23 @@ function generateUsernames() {
   if (usernames.length > 0) {
     usernames_str += "<strong>Here are some unique and catchy username options:</strong><br>";
     for (var i = 0; i < usernames.length; i++) {
-      usernames_str += usernames[i] + "<br>";
+      var username_html = usernames[i] + ' <button onclick="copyUsername(this)">Copy</button><br>';
+      usernames_str += username_html;
     }
     usernames_str += '<br><button type="button" onclick="generateUsernames()">Generate More</button>';
   } else {
     usernames_str += "Sorry, we could not generate any unique and catchy usernames for you.";
   }
   document.getElementById("usernames").innerHTML = usernames_str;
+}
+
+function copyUsername(button) {
+  var username = button.parentNode.firstChild.nodeValue.trim();
+  var el = document.createElement('textarea');
+  el.value = username;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  alert('Copied ' + username + ' to clipboard!');
 }
