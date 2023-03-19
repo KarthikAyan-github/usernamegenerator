@@ -57,12 +57,17 @@ function generateUsernames() {
 }
 
 function copyUsername(button) {
-  var username = button.parentNode.firstChild.nodeValue.trim();
-  var el = document.createElement('textarea');
-  el.value = username;
-  document.body.appendChild(el);
-  el.select();
+  var username = button.previousSibling.textContent.trim();
+  var tempInput = document.createElement('input');
+  tempInput.setAttribute('value', username);
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999); /*For mobile devices*/
   document.execCommand('copy');
-  document.body.removeChild(el);
-  alert('Copied ' + username + ' to clipboard!');
+  document.body.removeChild(tempInput);
+  if (!document.execCommand('copy')) {
+    document.execCommand('cut');
+  }
+  alert('Username copied to clipboard!');
 }
+
