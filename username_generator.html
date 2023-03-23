@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+	<title>Username Generator</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style2.css">
+	<script defer src="node_modules/swup/dist/swup.min.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="index.html" class="bar">HOME</a></li>
+				<li><a href="username_generator.html" class="bar">USERNAME</a></li>
+				<li><a href="#" class="bar">PASSWORD</a></li>
+				<li><a href="#" class="bar">SECURITY KEY</a></li>
+				<li><a href="#" class="bar">HOW IT WORKS ?</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main id="swup" class="transition-fade">
+	<h1 id="main-title" >Username Generator</h1>
+	<video autoplay muted loop id="back-video">
+		<source src="back.mp4" type="video/mp4"></source>
+	</video>
+	<div class="container">
+		<form>
+			<label for="firstname">First Name *</label>
+			<input type="text" id="firstname" name="firstname" placeholder="Enter your first name.." required>
+
+			<label for="middlename">Middle Name </label>
+			<input type="text" id="middlename" name="middlename" placeholder="Enter your middle name..">
+			
+			<label for="lastname">Last Name </label>
+			<input type="text" id="lastname" name="lastname" placeholder="Enter your last name.." required>
+
+			<label for="nickname">Nickname</label>
+			<input type="text" id="nickname" name="nickname" placeholder="Enter your nickname..">
+			
+			<label for="dob">Date of Birth *</label>
+			<input type="date" id="dob" name="dob" required>
+
+			<label for="interests">Interests</label>
+			<input type="text" id="interests" name="interests" placeholder="Enter your interests..">
+
+			<label for="hobbies">Hobbies</label>
+			<input type="text" id="hobbies" name="hobbies" placeholder="Enter your hobbies..">
+
+			<label for="emoji">Emoji</label>
+			<select id="emojis" name="emoji">
+  			<option value="">-- Select an Emoji or kaomoji --</option>
+
+  			<option value="❤️">❤️</option>
+  			<option value="&#x1f601;">😁</option>
+  			<option value="😎">😎</option>
+  			<option value="😍">😍</option>
+  			<option value="😘">😘</option>
+  			<option value="&#x2605;">🌟</option>
+  			<option value="😂">😂</option>
+  			<option value="💯">💯</option>
+			<option value="🔥">🔥</option>
+  			<option value="🥰">🥰</option>
+  			<option value="🕺">🕺</option>
+  			<option value="💃">💃</option>
+  			<option value="🏏">🏏</option>
+  			<option value="(⊙_⊙)">(⊙_⊙)</option>
+  			<option value="ಠ_ಠ">ಠ_ಠ</option>
+  			<option value="( ͡° ͜ʖ ͡°)">( ͡° ͜ʖ ͡°)</option>
+  			<option value="٩(◕‿◕)۶">٩(◕‿◕)۶</option>
+  			<option value="ʕ•́ᴥ•̀ʔっ">ʕ•́ᴥ•̀ʔっ</option>
+
+			</select><br/><br/>
+			<input type="text" id="emoji" name="emoji" placeholder="Or Enter your favourite emoji..">
+
+			<a href="#usernames"><button type="button" class="mBtn" onclick="generateUsernames()">Generate Usernames</button></a>
+		</form>
+
+		<div class="usernames" id="usernames">
+			<!-- The generated usernames will be displayed here -->
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+
+</body>
+</html>
