@@ -51,16 +51,6 @@ body h1{
 	font-family:Roboto,sans-serif;
 }
 
-
-#back-video{
-	position:fixed;
-	right:0;
-	bottom:0;
-	min-width:100%;
-	min-height:100%;
-	z-index:-1;
-}
-
 h1 {
     text-align: center;
     font-size: 36px;
